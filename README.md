@@ -7,7 +7,7 @@ A WordPress plugin to load more posts via ajax.
 - This plugins uses no dependencies, is translatable and WPML ready. 
 - The default previous and next links that are generated via `get_the_posts_navigation` keep available for visitors with JavaScript disabled.
 
-This plugin just grabs the next or previous page url, makes an Ajax request to that url and parses it. Therefore you don't need to worry if your theme templates and functionality gets used. What works for a browser request, works for the ajax request. The new posts get inserted to a container with the class `posts`. Make sure you have that class on your container or overwrite the selector via the `load-more-posts-js-vars` filter
+This plugin just grabs the next page url, makes an Ajax request to that url and parses it. Therefore you don't need to worry if your theme templates and functionality gets used. What works for a browser request, works for the ajax request. The new posts get inserted to a container with the class `posts`. Make sure you have that class on your container or overwrite the selector via the `load-more-posts-js-vars` filter
 
 ## Motivation
 

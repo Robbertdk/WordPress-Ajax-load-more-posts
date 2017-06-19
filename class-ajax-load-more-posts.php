@@ -64,7 +64,11 @@ class Ajax_Filter_Posts {
    * Set the plugins language domain
    */
   public function load_textdomain() {
-    load_muplugin_textdomain( 'ajax-load-more-posts', basename( dirname( __FILE__ )) . '/languages' );
+    if ( strpos( __FILE__, basename( WPMU_PLUGIN_DIR ) ) ) {
+      load_muplugin_textdomain( 'ajax-load-more-posts', basename(dirname( __FILE__ )) . '/languages' );
+    } else {
+      load_plugin_textdomain( 'ajax-load-more-posts', false, basename(dirname( __FILE__ )) . '/languages' );
+    }
   }
 
   /**
@@ -89,7 +93,7 @@ class Ajax_Filter_Posts {
   /**
    * Add extra variables to the url that can be used in next query
    * 
-   * @param  string   $url  url of previous or next page
+   * @param  string   $url  url of the next page
    * @return string   Updated url
    */
   private function get_url_vars($url) {
@@ -124,7 +128,7 @@ class Ajax_Filter_Posts {
         // You are not on the last page
       $template .= '
       <div class="posts__load-more">
-        <a href="' . $this->get_url_vars(get_next_posts_page_link()) . '" class="button js-load-more">' . __('Load more') . '</a>
+        <a href="' . $this->get_url_vars(get_next_posts_page_link()) . '" class="button js-load-more">' . __('Load more', 'ajax-load-more-posts') . '</a>
       </div>';
     }
 
