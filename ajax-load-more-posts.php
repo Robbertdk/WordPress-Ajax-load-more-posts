@@ -47,7 +47,7 @@ require plugin_dir_path( __FILE__ ) . 'class-ajax-load-more-posts.php';
  */
 function run_ajax_filter_posts() {
 
-	$plugin = new Ajax_Filter_Posts();
+	$plugin = new Ajax_Load_More_Posts();
 
 }
 run_ajax_filter_posts();

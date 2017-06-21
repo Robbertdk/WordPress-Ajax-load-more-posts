@@ -24,7 +24,7 @@
  * @package    Ajax_Filter_Posts
  * @author     Robbert de Kuiper <mail@robbertdekuiper.com>
  */
-class Ajax_Filter_Posts {
+class Ajax_Load_More_Posts {
 
   /**
    * The unique identifier of this plugin.
